@@ -14,12 +14,12 @@ let transporter = nodemailer.createTransport({
     }
 })
 
-export const passwordLink = (data) => {
+export const emailVerification = (data) => {
     const message = {
-        from: '',
+        from: 'vasanthdev06@gmail.com',
         to: data.email,
-        subject: '',
-        html: ''
+        subject: 'Email Verification',
+        text : `Token -  ${data.token}`
     }
 
     transporter.sendMail(message, (error, info) => {

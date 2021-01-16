@@ -10,11 +10,6 @@ const server = http.createServer(app)
 mongoose.connect(mongo.uri, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.Promise = Promise
 
-// const io = require('socket.io')(server);
-
-// export const emitMessage = (pattern, message) => {
-//     io.emit(pattern, message);
-// }
 console.log(process.argv);
 if (process.argv && process.argv.indexOf('CRON') >= 0) {
     console.log(`CROM job started looking for schduled jobs`)
